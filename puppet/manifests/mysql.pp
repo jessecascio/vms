@@ -1,10 +1,9 @@
 
   # http://docs.puppetlabs.com/references/latest/type.html
-  # http://matthewturland.com/2012/02/13/setting-up-ec2-for-drupal-with-puppet/
-  # yum -y update
-
+  # 'mysql -uroot -e "DELETE FROM mysql.user WHERE User=\'\'; DELETE FROM mysql.user WHERE User=\'root\' AND Host NOT IN (\'localhost\', \'127.0.0.1\', \'::1\'); DROP DATABASE IF EXISTS test; FLUSH PRIVILEGES;"'
+  
   exec { "yum-init":
-    command => "yum -y install wget nano",
+    command => "yum -y update; yum -y install wget nano",
     path    => ["/bin", "/usr/bin"],
     timeout => 0
   }
