@@ -1,6 +1,6 @@
-vms
+VMs
 ===
 
-Virtual Machine / Cluster projects
+Virtual Machine Clusters
 
-Puppet / Vagrant files
+From a development point of view, it is necessary to be able to quicklu build and test different server architectures for developing on.  This repo builds various server architectures using Vagrant and Puppet that can be used for development testing.
