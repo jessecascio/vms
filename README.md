@@ -14,7 +14,7 @@ All conf files are written for CentOS VMs.  If you want to use a different distr
 
 ###Installation
 
-To install on Virtual Box and Vagrant on Red Hat:
+To install Virtual Box and Vagrant on Red Hat:
 
 http://jessesnet.com/development-notes/2014/vagrant-virtual-machine-cluster/
 
