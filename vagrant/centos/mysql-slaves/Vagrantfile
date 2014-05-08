@@ -31,12 +31,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   ####
-  ## Global puppet for all VMs
+  ## Init modules for all VMs
+  ## Will be executed BEFORE any other manifests
   ####
 
   config.vm.provision "puppet" do |puppet|
-    puppet.module_path = PUPPET_MODULE_PATH
-    puppet.manifest_file = "global.pp"
+    puppet.module_path   = PUPPET_MODULE_PATH
+    puppet.manifest_file = "init.pp"
   end
 
 
@@ -59,6 +60,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "master" do |master|
     master.vm.network "private_network", ip: "10.2.2.2"
+
+     master.vm.provision "puppet" do |puppet|
+      puppet.module_path   = PUPPET_MODULE_PATH
+      puppet.manifest_file = "mysql.pp"
+    end
   end
 
 
@@ -68,6 +74,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "slave1" do |slave1|
     slave1.vm.network "private_network", ip: "10.2.2.4"
+
+     slave1.vm.provision "puppet" do |puppet|
+      puppet.module_path    = PUPPET_MODULE_PATH
+      puppet.manifest_file  = "mysql.pp"
+    end
   end
   
 end
