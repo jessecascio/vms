@@ -3,4 +3,5 @@
 #####################           Global Modules         #####################
 ############################################################################ 
 
-include yum::update
+# include yum::update
+include mysql::server
