@@ -1,7 +1,7 @@
 MySQL Slave(s)
 ===
 
-Master - Slave
+###Master - Slave
 
 This is a multi-server MySQL slave cluster.  Add as many slaves as needed via Vagrantfile
 
