@@ -1,17 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-
-############################################################################                  
-#####################          Editable Variables      #####################
-############################################################################ 
+####
+## Constants to for this OS
+####
+require_relative "../init.rb"
+include Constants
 
 VAGRANTFILE_API_VERSION = "2"
-
-VARGRANT_BOX            = "chef/centos-6.5"
-PUPPET_INSTALL_SCRIPT   = "../../puppet/puppet.sh"
-PUPPET_MODULE_PATH      = "../../puppet/modules"
 
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
