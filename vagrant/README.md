@@ -11,5 +11,7 @@ Each environment has it's own manifests directory with different Puppet includes
 Each distro has a init.rb file that contains constants that are need for all environments for that distro.  These include box values and paths to all the conf files.  These settings can be overwritten in an environment by updating the Vagrantfile.
 
 You can SSH between the VMs using the vagrant user and vagrant password by default.  To make things easier add SSH keys between the various servers (replace with IP of VM):  
-```ssh-keygen```  
-```ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@10.2.2.4```
+```
+ssh-keygen
+ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@10.2.2.4
+```
