@@ -7,7 +7,7 @@ From a development point of view, it is necessary to be able to quickly build an
 
 ###Prerequisites
 
-Virtual Box
+Virtual Box  
 Vagrant
 
 All conf files are written for CentOS VMs.  If you want to use a different distro you will have to update the Puppet conf files as well as the individual Vagrantfiles.
