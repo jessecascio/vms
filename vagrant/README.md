@@ -9,3 +9,9 @@ If changes need to be made to Vagrant (IP addresses, port forwarding, Puppet dir
 Each environment has it's own manifests directory with different Puppet includes.  This was done so that each VM inside of a cluster can pick what software it needs.  If you need to make new Puppet files, they should be placed in the /puppet directory under the correct distro.  All Puppet provisioning should be done via includes from the Vagrant environment's manifest files.
 
 Each distro has a init.rb file that contains constants that are need for all environments for that distro.  These include box values and paths to all the conf files.  These settings can be overwritten in an environment by updating the Vagrantfile.
+
+You can SSH between the VMs using the vagrant user and vagrant password by default.  To make things easier add SSH keys between the various servers (replace with IP of VM):  
+```
+ssh-keygen
+ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@10.2.2.4
+```
