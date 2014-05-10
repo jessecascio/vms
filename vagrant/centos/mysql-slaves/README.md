@@ -18,6 +18,7 @@ You can access master VM via a MySQL GUI on host computer by connecting via 127.
 ```
 mysql -u root  
 
-insert into mysql.user values('root','%');
-flush privileges;
+CREATE USER 'host'@'%' IDENTIFIED BY ''
+GRANT ALL ON *.* TO 'host'@'%';
+FLUSH PRIVILEGES;
 ```
