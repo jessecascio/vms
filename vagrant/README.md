@@ -26,3 +26,8 @@ Now to get to the slave server simpyle SSH to host name.  No password or IP addr
 ```
 ssh slave
 ```
+
+Lastly so that you can easily see what server you are via the terminal prompt, run the following at the command line:
+```
+sudo hostname master
+```
