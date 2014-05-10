@@ -31,3 +31,14 @@ Lastly so that you can easily see what server you are via the terminal prompt, r
 ```
 sudo hostname master
 ```
+
+To make changes persistent on VM reboot, update the HOSTNAME var in /etc/sysconfig/network:
+```
+HOSTNAME = master
+```
+
+And update /etc/hosts by adding new host name to list following 127.0.0.1 and ::1:
+```
+127.0.0.1         master
+::1               master
+```
