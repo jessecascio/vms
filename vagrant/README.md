@@ -15,3 +15,14 @@ You can SSH between the VMs using the vagrant user and vagrant password by defau
 ssh-keygen
 ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@10.2.2.4
 ```
+
+Now SSH requires no password.  For larger clusters it is easier to set up host names instead of having to type out IP addresses.  Add the following to /etc/hosts on each server you want to SSH from (host name can be whatever makes sense):
+```
+10.2.2.4       slave
+```
+
+Now to get to the slave server simpyle SSH to host name.  No password or IP address required:
+
+```
+ssh slave
+```
