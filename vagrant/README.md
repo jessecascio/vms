@@ -1,8 +1,11 @@
 Vagrant Clusters
 ===
 
-Here are the various environments I have set up for different Linux distros.  Each environment is named after the cluster feautures i.e. lamp, hadoop, etc. and will have it's own README with environment notes and a Vagrantfile to specify box settings.  To spin up the boxes simply run:
-```vagrant up```
+Here are the various environments I have set up for different Linux distros.  Each environment is named after the cluster feautures i.e. lamp, hadoop, etc. and will have it's own README with environment notes and a Vagrantfile to specify box settings.  To spin up the boxes simply run:   
+```
+vagrant box add chef/centos-6.5    
+vagrant up
+```
 
 If changes need to be made to Vagrant (IP addresses, port forwarding, Puppet dir, VMs, etc.) edit the VagrantFile.
 
