@@ -30,7 +30,7 @@ Now to get to access the slave server simply SSH to host name.  No password or I
 ssh slave
 ```
 
-Lastly so that you can easily see what server you are via the terminal prompt, run the following at the command line:
+Lastly, so that you can easily see what server you are via the terminal prompt, rename the server to it's function.  Run the following at the command line (replacing master with any useful servername):
 ```
 sudo hostname master
 ```
