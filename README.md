@@ -7,8 +7,6 @@ From a development point of view, it is necessary to be able to quickly build an
 
 ###Prerequisites
 
-Software needed:
-
 Virtual Box  
 Vagrant  
 
