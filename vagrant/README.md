@@ -24,7 +24,7 @@ Now SSH requires no password.  For larger clusters it is easier to set up host n
 10.2.2.4       slave
 ```
 
-Now to get to the slave server simpyle SSH to host name.  No password or IP address required:
+Now to get to access the slave server simply SSH to host name.  No password or IP address required:
 
 ```
 ssh slave
