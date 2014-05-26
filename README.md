@@ -1,4 +1,4 @@
-VMs
+Vagratn Puppet VM Clusters
 ===
 
 ###Virtual Machine Clusters
