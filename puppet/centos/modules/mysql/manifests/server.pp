@@ -1,4 +1,7 @@
 
+/**
+ * Installs MySQL Server 5.6
+ */
 
 class mysql::server {
 
