@@ -35,6 +35,8 @@ START SLAVE;
 SHOW SLAVE STATUS \G
 ```
 
+After the initial set up only the START SLAVE command will need to be run on VM startup.
+
 More info on <a href="http://jessesnet.com/development-notes/2014/mysql-master-slave-replication/" target="_blank">MySQL Replication</a>
 
 #####Notes
