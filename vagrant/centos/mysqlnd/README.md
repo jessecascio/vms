@@ -5,7 +5,7 @@ PHP Mysqlnd Replication Library
 
 The purpose of this cluster is to test PHP's mysqlnd replication library for load balancing a PHP application across a distributed MySQL architecture.  The cluster includes an application server with Apache and PHP, a MySQL master server and two MySQL slaves.
 
-######Setup
+#####Setup
 
 A slave user must be created on the master server VM:
 
@@ -35,7 +35,11 @@ START SLAVE;
 SHOW SLAVE STATUS \G
 ```
 
-######Notes
+After the initial set up only the START SLAVE command will need to be run on VM startup.
+
+More info on <a href="http://jessesnet.com/development-notes/2014/mysql-master-slave-replication/" target="_blank">MySQL Replication</a>
+
+#####Notes
 
 ```vagrant up```  
 ```vagrant ssh web```  
