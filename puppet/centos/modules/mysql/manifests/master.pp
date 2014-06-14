@@ -6,6 +6,13 @@
 class mysql::master ($server_id=10)
 {	
 
+	file { "/var/log/mysql":
+	    ensure => "directory",
+	    owner  => "mysql",
+	    group  => "mysql",
+		mode   => 755
+	}
+
 	file { "my.cnf":
 		path    => "/etc/my.cnf",
 		ensure  => file,
