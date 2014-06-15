@@ -51,6 +51,11 @@ NOTE: If you have issues connecting to slaves from web server you may need to dr
 DROP USER web;
 ```
 
+For test data, you can use <a href="http://dev.mysql.com/doc/index-other.htm" target="_blank">MySQL's test databases</a>.  Download the sql and import into master  via the host machine.  The changes will be replicated to the slaves:
+```
+mysql -u host -h 127.0.0.1 -P 1028 < world_innodb.sql
+```
+
 More info on <a href="http://jessesnet.com/development-notes/2014/mysql-master-slave-replication/" target="_blank">MySQL Replication</a>
 
 #####Notes
