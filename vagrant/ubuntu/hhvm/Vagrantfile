@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ####
 
   # config.vm.provision :shell, :path => PUPPET_INSTALL_SCRIPT
-
+  
 
   ####
   ## Init modules for all VMs
@@ -62,6 +62,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     web.vm.network "private_network", ip: "10.2.2.2"
     web.vm.network "forwarded_port", guest: "80", host: "1028", host_ip: "127.0.0.1"
+    # web.vm.network "forwarded_port", guest: "9000", host: "9000", host_ip: "127.0.0.1"
        
     # web.vm.provision "puppet" do |puppet|
     #   puppet.module_path   = PUPPET_MODULE_PATH

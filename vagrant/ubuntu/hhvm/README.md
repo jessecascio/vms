@@ -20,7 +20,7 @@ Install LAMP
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install apache2
 sudo apt-get install mysql-server mysql-client
-sudo apt-get install php5 php5-common php5-cli php5-mysql
+sudo apt-get install php5 php5-common php5-cli php5-mysql php5-cgi
 ```
 
 Install <a href="https://github.com/facebook/hhvm/wiki/Prebuilt-packages-on-Ubuntu-14.04" target="_blank">HHVM</a>
