@@ -35,10 +35,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ## Will be executed BEFORE any other manifests
   ####
 
-  # config.vm.provision "puppet" do |puppet|
-  #   puppet.module_path   = PUPPET_MODULE_PATH
-  #   puppet.manifest_file = "default.pp"
-  # end
+  config.vm.provision "puppet" do |puppet|
+    puppet.module_path   = PUPPET_MODULE_PATH
+    puppet.manifest_file = "default.pp"
+  end
 
 
   ####
@@ -58,16 +58,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ## web server
   ####
 
-  config.vm.define "web" do |web|
+  config.vm.define "hhvm" do |hhvm|
 
-    web.vm.network "private_network", ip: "10.2.2.2"
-    web.vm.network "forwarded_port", guest: "80", host: "1028", host_ip: "127.0.0.1"
-    # web.vm.network "forwarded_port", guest: "9000", host: "9000", host_ip: "127.0.0.1"
+    hhvm.vm.network "private_network", ip: "10.2.2.2"
+    hhvm.vm.network "forwarded_port", guest: "80", host: "1028", host_ip: "127.0.0.1"
        
-    # web.vm.provision "puppet" do |puppet|
-    #   puppet.module_path   = PUPPET_MODULE_PATH
-    #   puppet.manifest_file = "web.pp"
-    # end
+    hhvm.vm.provision "puppet" do |puppet|
+      puppet.module_path   = PUPPET_MODULE_PATH
+      puppet.manifest_file = "hhvm.pp"
+    end
 
   end
   
