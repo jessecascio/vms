@@ -7,4 +7,10 @@ class php::55 {
 	  timeout => 0
 	}
 
+	exec {"apt-composer":
+		command => "curl -sS https://getcomposer.org/installer | php;mv composer.phar /usr/bin/composer;",
+		require => Exec["apt-php"],
+		path    => ["/bin", "/usr/bin"],
+	  	timeout => 0
+	}
 }

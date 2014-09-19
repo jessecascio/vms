@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ## Script for installing puppet on Vms
   ####
 
-  # config.vm.provision :shell, :path => PUPPET_INSTALL_SCRIPT
+  config.vm.provision :shell, :path => PUPPET_INSTALL_SCRIPT
   
 
   ####
@@ -40,6 +40,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file = "default.pp"
   end
 
+  ####
+  ## Set location of synced folder
+  ####
+
+  config.vm.synced_folder "www/", "/var/www"
 
   ####
   ## Memory usage for the Vms
