@@ -12,6 +12,6 @@ Web IP: 10.2.2.2
 
 Host port 1028 forwards to web port 80: 127.0.0.1:1028 -> web:80
 
-Synced Folder: <br><br>
-	Local:   shared/ <br>
-	Vagrant: /var/shared
+Synced Folder: <br>
+    Local:   shared/ <br>
+    Vagrant: /var/shared
