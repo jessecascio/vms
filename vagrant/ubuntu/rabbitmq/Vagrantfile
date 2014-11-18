@@ -66,7 +66,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "server" do |server|
 
     server.vm.network "private_network", ip: "10.2.2.2"
-    server.vm.network "forwarded_port", guest: "1028", host: "1028", host_ip: "127.0.0.1"
+    server.vm.network "forwarded_port", guest: "15672", host: "1028", host_ip: "127.0.0.1"
+    server.vm.network "forwarded_port", guest: "5672", host: "1029", host_ip: "127.0.0.1"
        
     server.vm.provision "puppet" do |puppet|
       puppet.module_path   = PUPPET_MODULE_PATH
