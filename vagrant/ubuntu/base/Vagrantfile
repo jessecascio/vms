@@ -35,16 +35,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ## Will be executed BEFORE any other manifests
   ####
 
-  #config.vm.provision "puppet" do |puppet|
-    #puppet.module_path   = PUPPET_MODULE_PATH
-    #puppet.manifest_file = "default.pp"
-  #end
+  config.vm.provision "puppet" do |puppet|
+    puppet.module_path   = PUPPET_MODULE_PATH
+    puppet.manifest_file = "default.pp"
+  end
 
   ####
   ## Set location of synced folder
   ####
 
-  config.vm.synced_folder "shared/", "/var/shared"
+  # config.vm.synced_folder "shared/", "/var/shared"
 
   ####
   ## Memory usage for the Vms
@@ -60,12 +60,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ############################################################################    
 
   ####
-  ## chef server
+  ## base box for testing
   ####
 
-  config.vm.define "chef" do |chef|
+  config.vm.define "base" do |base|
 
-    chef.vm.network "private_network", ip: "10.2.2.2"
+    base.vm.network "forwarded_port", guest: "2049", host: "1021", host_ip: "127.0.0.1"
+    base.vm.network "private_network", ip: "10.2.2.2"
 
   end
   
