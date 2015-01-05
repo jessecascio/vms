@@ -14,5 +14,13 @@ class rabbitmq::server {
 		path    => ["/bin", "/usr/bin"],
 		timeout => 0
 	}
-  
+
+	file { "rabbitmq.config":
+	    path    => "/etc/rabbitmq/rabbitmq.config",
+	    ensure  => file,
+	    require => [
+	      Package["rabbitmq-server"]
+	    ],
+	    content => template("rabbitmq/cluster.erb")
+	}
 }
