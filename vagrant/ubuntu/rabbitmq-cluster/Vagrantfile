@@ -62,18 +62,33 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ####
   ## web server
   ####
+  config.vm.define "master" do |master|
+    master.vm.network "private_network", ip: "10.2.2.2"
+    master.vm.network "forwarded_port", guest: "15672", host: "1028", host_ip: "127.0.0.1"
+    master.vm.network "forwarded_port", guest: "5672", host: "1029", host_ip: "127.0.0.1"
 
-  config.vm.define "server" do |server|
-
-    server.vm.network "private_network", ip: "10.2.2.2"
-    server.vm.network "forwarded_port", guest: "15672", host: "1028", host_ip: "127.0.0.1"
-    server.vm.network "forwarded_port", guest: "5672", host: "1029", host_ip: "127.0.0.1"
-       
-    server.vm.provision "puppet" do |puppet|
+    master.vm.provision "puppet" do |puppet|
       puppet.module_path   = PUPPET_MODULE_PATH
       puppet.manifest_file = "server.pp"
     end
+  end
 
+  config.vm.define "slave1" do |slave1|
+    slave1.vm.network "private_network", ip: "10.2.2.4"
+
+    slave1.vm.provision "puppet" do |puppet|
+      puppet.module_path   = PUPPET_MODULE_PATH
+      puppet.manifest_file = "server.pp"
+    end
+  end
+
+  config.vm.define "slave2" do |slave2|
+    slave2.vm.network "private_network", ip: "10.2.2.6"
+
+    slave2.vm.provision "puppet" do |puppet|
+      puppet.module_path   = PUPPET_MODULE_PATH
+      puppet.manifest_file = "server.pp"
+    end
   end
 
 end
