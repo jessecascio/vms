@@ -1,4 +1,4 @@
-LAMP
+RabbitMQ
 ===
 
 ####RabbitMQ Cluster
