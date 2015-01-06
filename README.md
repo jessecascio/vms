@@ -12,7 +12,7 @@ Vagrant
 
 ###Installation
 
-To install Virtual Box and Vagrant on Red Hat:
+To install Virtual Box and Vagrant on CentOS/Ubuntu:
 
 http://jessesnet.com/development-notes/2014/vagrant-virtual-machine-cluster/
 
