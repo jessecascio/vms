@@ -4,3 +4,4 @@
 ############################################################################ 
 
 include rabbitmq::server
+include rabbitmq::cluster

@@ -10,16 +10,9 @@ class rabbitmq::server {
 					sudo apt-get update;
 					sudo apt-get install rabbitmq-server -y;
 					sudo rabbitmq-plugins enable rabbitmq_management;
-					sudo service rabbitmq-server start;
-					sudo rabbitmq-plugins enable rabbitmq_management;
 					sudo rabbitmqctl add_user jesse pass; 
 					sudo rabbitmqctl set_user_tags jesse administrator; 
-					sudo rabbitmqctl set_permissions -p / jesse '.*' '.*' '.*';
-					sudo rm /var/lib/rabbitmq/.erlang.cookie
-					echo 'jesse54ac1be08ea64' | sudo tee -a /var/lib/rabbitmq/.erlang.cookie
-					sudo chmod 400 /var/lib/rabbitmq/.erlang.cookie
-					sudo chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie 
-					sudo service rabbitmq-server restart;",
+					sudo rabbitmqctl set_permissions -p / jesse '.*' '.*' '.*';",
 		path    => ["/bin", "/usr/bin"],
 		timeout => 0
 	}
